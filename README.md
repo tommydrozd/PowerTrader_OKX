@@ -38,7 +38,7 @@ This fork replaces Robinhood with **OKX** spot trading and adds a few quality-of
 
 Your keys and personal data stay local: `okx_key.txt`, `okx_secret.txt`, `okx_passphrase.txt`, `okx_settings.json`, `telegram_settings.json`, `gui_settings.json` and `hub_data/` are listed in `.gitignore`.
 
----
+- ################################################################################################ -
 
 I have not checked any PowerTrader AI forks and cannot confirm or deny their legitimacy.
 
