@@ -3226,7 +3226,9 @@ class CryptoAPITrading:
         try:
             if notifier is not None and (response is None or (isinstance(response, dict) and "errors" in response)):
                 _d = "no response from OKX" if response is None else " | ".join(str(e.get("detail", "")) for e in response.get("errors", []))
-                notifier.alert(f"order_sell_{symbol}", f"⚠️ SELL {symbol} failed: {_d[:200]}", cooldown=1800)
+                # Leftover dust below OKX's minimum order size can't be sold; that is irrelevant, so no alert.
+                if "greater than or equal to" not in _d:
+                    notifier.alert(f"order_sell_{symbol}", f"⚠️ SELL {symbol} failed: {_d[:200]}", cooldown=1800)
         except Exception:
             pass
 
