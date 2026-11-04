@@ -24,6 +24,7 @@ This fork replaces Robinhood with **OKX** spot trading and adds a few quality-of
 - New `notifier.py`, set up from **Settings → Telegram**.
 - Messages for every buy, DCA buy, sell and long-term buy, with the profit shown on sells.
 - Alerts for OKX connection failures, rejected orders, buys below OKX's minimum size, and failed long-term buys. Sells that fail only because leftover dust is below OKX's minimum size are not reported.
+- Telegram: sells that fail only because the leftover amount (dust) is below OKX's minimum order size no longer send an alert. Other failed or rejected orders are still reported.
 
 ### Trader
 - The long-term-holdings profit bucket now buys once it reaches **$5**, up from $0.50 (`LTH_BUCKET_MIN_USD` in `pt_trader.py`).
